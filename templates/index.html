@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="stylesheet" href="/img/LogoSERCOTEC.png">
     
     <title>Listado de Empresas</title>
 </head>
@@ -12,7 +13,7 @@
     <header>
         <a href="https://www.sercotec.cl/" target="_blank">
           <img
-            src="/img/LogoSERCOTEC.png"
+            src="{{ url_for('static', filename='/css/img/LogoSERCOTEC.png') }}" alt="Mi imagen"
             alt="logoSercotec"
             title="Logo Sercotec"
           />
@@ -22,9 +23,9 @@
           <!-- <h1><img src="img/sercotec4.png" alt="sercotec"></h1> -->
           <nav>
             <ul>
-              <li><a href="https://www.sercotec.cl/" target="_blank" title="Pagina de inicio Sercotec">Home</a></li>
-              <li><a href="https://www.sercotec.cl/contacto/" target="_blank" title="Pagina de contacto Sercotec">Contacto</a></li>
-              <li><a href="https://misdatos.sercotec.cl/" target="_blank" title="Pagina de registro Sercotec">Registrate</a></li>
+              <li><a href="https://www.sercotec.cl/" target="_blank" title="Pagina de inicio Sercotec" style="color: white;">Home</a></li>
+              <li><a href="https://www.sercotec.cl/contacto/" target="_blank" title="Pagina de contacto Sercotec" style="color: white;">Contacto</a></li>
+              <li><a href="https://misdatos.sercotec.cl/" target="_blank" title="Pagina de registro Sercotec" style="color: white;">Registrate</a></li>
             </ul>
           </nav>
         </div>

@@ -88,41 +88,14 @@ def buscar():
     termino_busqueda = request.form['termino_busqueda']
     # Lógica para buscar empresas con el término de búsqueda  
     empresas = Empresas.query.filter(Empresas.nombre.like(f'%{termino_busqueda}%')).all()
-    # empresas = Empresas.query.filter(Empresas.email.like(f'%{termino_busqueda}%')).all()
-    # empresas = Empresas.query.filter(Empresas.categoria.like(f'%{termino_busqueda}%')).all()
-    # empresas = Empresas.query.filter(Empresas.producto_o_servicio.like(f'%{termino_busqueda}%')).all()
+    empresas = Empresas.query.filter(Empresas.email.like(f'%{termino_busqueda}%')).all()
+    empresas = Empresas.query.filter(Empresas.categoria.like(f'%{termino_busqueda}%')).all()
+    empresas = Empresas.query.filter(Empresas.producto_o_servicio.like(f'%{termino_busqueda}%')).all()
     total_empresas = len(empresas)
     app.logger.debug(f'Empresas encontradas: {empresas}')
     return render_template('resultados_busqueda.html', empresas=empresas, total_empresas=total_empresas)
 
-# @app.route('/')
-# def index():
-#     imagenes = ['sercotec1.jpg', 'sercotec2.jpg', 'sercotec3.jpg', 'sercotec4.']
-#     return render_template('carousel.html', imagenes=imagenes)
 
-
-
-# @app.route('/insertar_empresas')
-# def insertar_empresas():
-#     # Datos de ejemplo
-#     empresas = [
-#         {"nombre": "Empresa 1", "email": "empresa1@gmail.com", "categoria": "Tecnología", "producto_servicio": "Software"},
-#         {"nombre": "Empresa 2", "email": "empresa2@gmail.com", "categoria": "Tecnología", "producto_servicio": "Hardware"},
-#         {"nombre": "Empresa 3", "email": "empresa3@gmail.com", "categoria": "Alimentación", "producto_servicio": "Productos orgánicos"},
-#         {"nombre": "Empresa 4", "email": "empresa4@gmail.com", "categoria": "Transporte", "producto_servicio": "Logística"},
-#         {"nombre": "Empresa 5", "email": "empresa5@gmail.com", "categoria": "Turismo", "producto_servicio": "Paquetes vacacionales"},
-#         {"nombre": "Empresa 6", "email": "empresa6@gmail.com", "categoria": "Servicios financieros", "producto_servicio": "Préstamos"},
-#         {"nombre": "Empresa 7", "email": "empresa7@gmail.com", "categoria": "Salud", "producto_servicio": "Medicina alternativa"},
-#         {"nombre": "Empresa 8", "email": "empresa8@gmail.com", "categoria": "Educación", "producto_servicio": "Cursos en línea"},
-#         {"nombre": "Empresa 9", "email": "empresa9@gmail.com", "categoria": "Arte y diseño", "producto_servicio": "Diseño gráfico"},
-#         {"nombre": "Empresa 10", "email": "empresa10@gmail.com", "categoria": "Marketing", "producto_servicio": "Publicidad en línea"}
-#     ]
-#     # Insertar las empresas en la base de datos
-#     for empresa in empresas:
-#         nueva_empresa = Empresas(nombre=empresa['nombre'], email=empresa['email'], categoria=empresa['categoria'], producto_servicio=empresa['producto_servicio'])
-#         db.session.add(nueva_empresa)
-#     db.session.commit()
-#     return 'Empresas insertadas correctamente'
 
 
 
