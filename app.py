@@ -1,8 +1,9 @@
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, flash, redirect, render_template, request, url_for
 from flask_migrate import Migrate
 from database import db
 from forms import EmpresasForm
 from models import Empresas
+from sqlalchemy import or_
 
 app = Flask(__name__)
 
@@ -83,30 +84,27 @@ def eliminar(id):
     db.session.commit()
     return redirect(url_for('inicio'))
 
+
 @app.route('/buscar', methods=['POST'])
 def buscar():
     termino_busqueda = request.form['termino_busqueda']
     # Lógica para buscar empresas con el término de búsqueda  
-    empresas = Empresas.query.filter(Empresas.nombre.like(f'%{termino_busqueda}%')).all()
-    empresas = Empresas.query.filter(Empresas.email.like(f'%{termino_busqueda}%')).all()
-    empresas = Empresas.query.filter(Empresas.categoria.like(f'%{termino_busqueda}%')).all()
-    empresas = Empresas.query.filter(Empresas.producto_o_servicio.like(f'%{termino_busqueda}%')).all()
+    if termino_busqueda.isdigit():  # Comprobar si es un número
+        empresas = Empresas.query.filter(
+            or_(
+                Empresas.telefono == termino_busqueda,
+                Empresas.id == termino_busqueda
+            )
+        ).all()
+    else:
+        empresas = Empresas.query.filter(
+            or_(
+                Empresas.nombre.ilike(f'%{termino_busqueda}%'),
+                Empresas.email.ilike(f'%{termino_busqueda}%'),
+                Empresas.categoria.ilike(f'%{termino_busqueda}%'),
+                Empresas.producto_o_servicio.ilike(f'%{termino_busqueda}%')
+            )
+        ).all()
     total_empresas = len(empresas)
     app.logger.debug(f'Empresas encontradas: {empresas}')
     return render_template('resultados_busqueda.html', empresas=empresas, total_empresas=total_empresas)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

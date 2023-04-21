@@ -37,8 +37,7 @@ li a, a:hover,a:active{
     background-color: #053861;
     text-decoration: underline;
 }
-img{
-    
+img{    
     display: block;
     color: white;
     text-align: center;
@@ -47,6 +46,56 @@ img{
     margin: 0;
     text-decoration: none;
     width: 88px;
-    height: 88px;
+    height: 88px;    
+}
+button{
+    background-color: #053861;
+    color: white;
     
+}
+button:hover{
+    color: #8ecae6;
+    background-color: #053861;
+    text-decoration: underline;   
+}
+
+.slider{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 400%;
+    animation: automatico 10s infinite alternate linear;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    width: 100%;
+    height: 400px;
+}
+@media(min-width:768px) {
+    .slider img{
+        height: 400px;
+    }
+}
+
+@keyframes automatico{
+
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
 }

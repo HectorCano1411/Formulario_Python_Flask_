@@ -30,7 +30,16 @@
           </nav>
         </div>
       </header>
-  
+      <div class="slider">
+        <ul>
+          <li><img src="{{ url_for('static', filename='/css/img/sercotec1.jpg') }}" alt=""></li>
+          <li><img src="{{ url_for('static', filename='/css/img/sercotec2.jpg') }}" alt=""></li>
+          <li><img src="{{ url_for('static', filename='/css/img/sercotec3.jpg') }}" alt=""></li>
+          <li><img src="{{ url_for('static', filename='/css/img/sercotec4.png') }}" alt=""></li>
+        </ul>
+        
+      </div>
+      <br><br><br><br>
    
     
     <h1>Sistema de Administración de Empresas (SAE)</h1>
@@ -39,8 +48,8 @@
         Total Empresas: {{total_empresas}}
     </div>
     <br>
-    <div>
-        <a href="/agregar">Agregar Empresas</a>
+    <div >
+        <a href="/agregar" style="background-color: #053861; color: white; border-bottom: 1px solid black;">Ingresa tu Empresa Aqui</a>
     </div>
     <br>
     <div>
