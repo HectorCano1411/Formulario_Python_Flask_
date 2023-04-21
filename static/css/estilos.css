@@ -18,7 +18,13 @@ h1{
     text-shadow: 2px 2px 5px white ;
     box-shadow: 3px 3px 6px 3px white;
 }
-
+.bienvenida{
+    border: 1px solid white;
+    text-align: center;
+    margin: 15px;
+    padding: 15px;
+    color: white;
+}
 td a:link{
     color: black;
 }
@@ -152,9 +158,11 @@ table{
     box-shadow: 15px 15px 15px rgb(0,0,0,.2);
     margin-bottom: 15px;
     padding: 15px;
+    min-width: 250px;
 }
 table th td{
     text-align: center;
+    min-width: 250px;
 }
 
 .ingresaEmpresa{
@@ -165,6 +173,7 @@ table th td{
     margin-bottom: 15px;
     width: 15%;
     text-align: center;
+    min-width: 250px;
 }
 input{
     margin: 15px;
@@ -187,16 +196,25 @@ button{
 fieldset{
     color: white;
     border: 2px solid white;
+    min-width: 250px;
 }
 .digitaliza{
     
 float: right;   
 height: 500px;
+min-width: 250px;
 }
 .digi{
     height: 180%;
     width: 100%;
     margin: 5px;
     padding: 5px;
+    min-width: 250px;
 
+}
+form{
+    min-width: 250px;
+}
+legend{
+    min-width: 250px;
 }
