@@ -15,6 +15,10 @@
     <form method="POST">
         <fieldset>
             <legend>Ingrese la Información de su Empresa</legend>
+        <div class="digitaliza">
+            <label>Digitaliza tu Almacen:</label><br>
+            <img src="{{ url_for('static', filename='/css/img/sercotec5.jpg') }}" alt="sercotec5" class="digi">
+        </div>    
         {{forma.csrf_token}}
         <p>
             {{forma.nombre.label}} <br/>
@@ -47,6 +51,7 @@
             {{forma.descripcion.label}} <br>
             <textarea name="descripcion" rows="5" cols="50" placeholder="Ingrese una descripción de su empresa"></textarea>
         </p>
+       
         <p>
             
             {{forma.enviar()}}

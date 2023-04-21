@@ -82,7 +82,7 @@ button:hover{
     padding: 0;
     margin: 0;
     width: 400%;
-    animation: automatico 20s infinite alternate linear;
+    animation: automatico 15s infinite alternate linear;
 }
 .slider li{
     width: 100%;
@@ -187,4 +187,16 @@ button{
 fieldset{
     color: white;
     border: 2px solid white;
+}
+.digitaliza{
+    
+float: right;   
+height: 500px;
+}
+.digi{
+    height: 180%;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+
 }

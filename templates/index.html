@@ -61,26 +61,26 @@
       <ul>
         <li>
           <img
-            src="{{ url_for('static', filename='/css/img/sercotec1.jpg') }}"
-            alt=""
+            src="{{ url_for('static', filename='/css/img/sercotec4.png') }}"
+            alt="sercotec4" 
           />
         </li>
         <li>
           <img
             src="{{ url_for('static', filename='/css/img/sercotec2.jpg') }}"
-            alt=""
+            alt="sercotec2"
           />
         </li>
         <li>
           <img
             src="{{ url_for('static', filename='/css/img/sercotec3.jpg') }}"
-            alt=""
+            alt="sercotec3"
           />
         </li>
         <li>
           <img
-            src="{{ url_for('static', filename='/css/img/sercotec4.png') }}"
-            alt=""
+            src="{{ url_for('static', filename='/css/img/sercotec1.jpg') }}"
+            alt="sercotec1"
           />
         </li>
       </ul>
@@ -91,7 +91,7 @@
     <br />
     <div class="ingresaEmpresa">
       <a
-        href="/agregar">Ingresa tu Empresa Aqui</a
+        href="/agregar" title="Haz click aqui para ingresar tu Empresa">Ingresa tu Empresa Aqui</a
       >
     </div>
     <br />
@@ -124,9 +124,9 @@
               <td>{{empresas.categoria}}</td>
               <td>{{empresas.producto_o_servicio}}</td>
               <td>{{empresas.descripcion}}</td>
-              <td><a href="ver/{{empresas.id}}">Ver</a></td>
-              <td><a href="editar/{{empresas.id}}">Editar</a></td>
-              <td><a href="eliminar/{{empresas.id}}">Eliminar</a></td>
+              <td><a href="ver/{{empresas.id}}"title="Ver información de la empresa">Ver</a></td>
+              <td><a href="editar/{{empresas.id}}"title="Editar información de la empresa">Editar</a></td>
+              <td><a href="eliminar/{{empresas.id}}" title="Eliminar información de la empresa">Eliminar</a></td>
             </tr>
             {% endfor %}
           </tbody>
@@ -142,7 +142,7 @@
       </div>
     </section>
     <br />
-    <iframe src="texto.txt" name="marco1" class="marco" ></iframe>
+    <iframe src="https://portales.inacap.cl/" name="marco1" class="marco" ></iframe>
     <div class="centrar">
       <a href="https://portales.inacap.cl/" target="marco1" class="boton" 
         >Cargar sitio de Inacap</a
@@ -151,9 +151,9 @@
 
     <br />
     <div class="pie_de_pagina">
-    <a href="#Home" style="color: white;">Home</a>|
-    <a href="#Contacto" style="color: white;">Contacto</a>|
-    <a href="#Registrate" style="color: white;">Registrate</a>|
+    <a href="#Home" style="color: white;" title="Volver a Home" >Home</a>|
+    <a href="#Contacto" style="color: white;" title="Volver a Contacto">Contacto</a>|
+    <a href="#Registrate" style="color: white;" title="Volver a Registrate">Registrate</a>|
     </div>
     
   </body>
