@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="{{ url_for('static', filename='css/estilos.css') }}"/>
+
     <title>Agregar Empresas</title>
 </head>
 <body>
@@ -11,38 +13,48 @@
 
     
     <form method="POST">
+        <fieldset>
+            <legend>Ingrese la Información de su Empresa</legend>
         {{forma.csrf_token}}
         <p>
             {{forma.nombre.label}} <br/>
-            {{forma.nombre(size=30)}}
+            {{forma.nombre(size=30, placeholder="Ingrese el Nombre de su Empresa")}}
+            
         </p>
 
         <p>
             {{forma.telefono.label}} <br/>
-            {{forma.telefono(size=30)}}
+            {{forma.telefono(size=30, placeholder="Ingrese el Teléfono de su Empresa")}}
         </p>
         <p>
             {{forma.comuna.label}} <br/>
-            {{forma.comuna(size=30)}}
+            {{forma.comuna(size=30, placeholder="Ingrese la Comuna de su Empresa")}}
         </p>
 
         <p>
             {{forma.email.label}} <br/>
-            {{forma.email(size=30)}}
+            {{forma.email(size=30, placeholder="Ingrese el Email de su Empresa")}}
         </p>
         <p>
             {{forma.categoria.label}} <br/>
-            {{forma.categoria(size=30)}}
+            {{forma.categoria(size=30, placeholder="Ingrese la Categoria de su empresa")}}
         </p>
         <p>
             {{forma.producto_o_servicio.label}} <br/>
-            {{forma.producto_o_servicio(size=30)}}
+            {{forma.producto_o_servicio(size=30, placeholder="Ingrese si es Producto o Servicio")}}
+        </p>
+        <p>
+            {{forma.descripcion.label}} <br>
+            <textarea name="descripcion" rows="5" cols="50" placeholder="Ingrese una descripción de su empresa"></textarea>
         </p>
         <p>
             
             {{forma.enviar()}}
             
         </p>
+        <a href="{{url_for('inicio')}}">Volver a la Página de inicio </a>
+
+    </fieldset>
     </form>
     
 </body>

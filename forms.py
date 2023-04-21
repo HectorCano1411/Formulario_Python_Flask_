@@ -13,4 +13,5 @@ class EmpresasForm(FlaskForm):
     email = EmailField('Email', validators=[DataRequired()])
     categoria = StringField('Categoría', validators=[DataRequired()])
     producto_o_servicio =  StringField('Producto/Servicio', validators=[DataRequired()])
+    descripcion =  StringField('Descripcion', validators=[DataRequired()])
     enviar = SubmitField('Enviar')

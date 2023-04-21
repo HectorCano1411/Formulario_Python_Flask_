@@ -22,8 +22,11 @@
         <th>Nombre</th>
         <th>Teléfono</th>
         <th>Comuna</th>
-        <th>Correo Electrónico</th>
-        <th>Dirección</th>
+        <th>Email</th>
+        <th>Categoria</th>
+        <th>Producto/Servicio</th>
+        <th>Descripcion</th>
+
       </tr>
     </thead>
     <tbody>
@@ -36,6 +39,7 @@
           <td>{{ empresas.email }}</td>
           <td>{{ empresas.categoria }}</td>
           <td>{{ empresas.producto_o_servicio }}</td>
+          <td>{{ empresas.descripcion }}</td>
         </tr>
       {% endfor %}
     </tbody>

@@ -103,7 +103,8 @@ def buscar():
                 Empresas.comuna.ilike(f'%{termino_busqueda}%'),
                 Empresas.email.ilike(f'%{termino_busqueda}%'),
                 Empresas.categoria.ilike(f'%{termino_busqueda}%'),
-                Empresas.producto_o_servicio.ilike(f'%{termino_busqueda}%')
+                Empresas.producto_o_servicio.ilike(f'%{termino_busqueda}%'),
+                Empresas.descripcion.ilike(f'%{termino_busqueda}%')
             )
         ).all()
     total_empresas = len(empresas)

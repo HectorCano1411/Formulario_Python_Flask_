@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet"href="{{ url_for('static', filename='css/estilos.css') }}"/> -->
+
     <title>Ver Empresas</title>
 </head>
 <body>
     <h1>Ver Empresas</h1>
     <br>venv
     <div>Id Empresa         {{empresas.id}}</div>
-    <div>Nombre             {{empresas.nombre}}</div>
-    <div>Teléfono           {{empresas.telefono}}</div>
-    <div>Comuna           {{empresas.comuna}}</div>
-    <div>Email              {{empresas.email}}</div>
-    <div>Categoría          {{empresas.categoria}}</div>
-    <div>Producto/Servicio  {{empresas.producto_o_servicio}}</div>
+    <div>Nombre:             {{empresas.nombre}}</div>
+    <div>Teléfono:           {{empresas.telefono}}</div>
+    <div>Comuna:             {{empresas.comuna}}</div>
+    <div>Email:              {{empresas.email}}</div>
+    <div>Categoría:          {{empresas.categoria}}</div>
+    <div>Producto/Servicio:  {{empresas.producto_o_servicio}}</div>
+    <div>Descripcion:        {{empresas.descripcion}}</div>
     <br>
     <a href="{{url_for('inicio')}}">Volver a la Página de inicio </a>
 </body>

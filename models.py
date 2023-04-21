@@ -9,6 +9,7 @@ class Empresas(db.Model):
     email = db.Column(db.String(250))
     categoria= db.Column(db.String(250))
     producto_o_servicio = db.Column(db.String(250))
+    descripcion = db.Column(db.String(250))
 
     def __str__(self):
         return (
@@ -17,6 +18,7 @@ class Empresas(db.Model):
             f'Telefono: {self.telefono},'
             f'Comuna: {self.comuna},'
             f'Email: {self.email}'
-            f'Categoria: {self.categoria}'
-            f'Progucto_o_Servicio: {self.producto_o_servicio}'
+            f'Categoria: {self.categoria},'
+            f'Progucto_o_Servicio: {self.producto_o_servicio},'
+            f'Descripcion: {self.descripcion}'
         )
