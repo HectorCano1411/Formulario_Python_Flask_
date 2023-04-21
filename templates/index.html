@@ -1,96 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
-    <link rel="stylesheet" href="/img/LogoSERCOTEC.png">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/estilos.css') }}"
+    />
+    <link rel="stylesheet" href="/img/LogoSERCOTEC.png" />
+
     <title>Listado de Empresas</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <a href="https://www.sercotec.cl/" target="_blank">
-          <img
-            src="{{ url_for('static', filename='/css/img/LogoSERCOTEC.png') }}" alt="Mi imagen"
-            alt="logoSercotec"
-            title="Logo Sercotec"
-          />
-        </a>
-  
-        <div class="caja">
-          <!-- <h1><img src="img/sercotec4.png" alt="sercotec"></h1> -->
-          <nav>
-            <ul>
-              <li><a href="https://www.sercotec.cl/" target="_blank" title="Pagina de inicio Sercotec" style="color: white;">Home</a></li>
-              <li><a href="https://www.sercotec.cl/contacto/" target="_blank" title="Pagina de contacto Sercotec" style="color: white;">Contacto</a></li>
-              <li><a href="https://misdatos.sercotec.cl/" target="_blank" title="Pagina de registro Sercotec" style="color: white;">Registrate</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <div class="slider">
-        <ul>
-          <li><img src="{{ url_for('static', filename='/css/img/sercotec1.jpg') }}" alt=""></li>
-          <li><img src="{{ url_for('static', filename='/css/img/sercotec2.jpg') }}" alt=""></li>
-          <li><img src="{{ url_for('static', filename='/css/img/sercotec3.jpg') }}" alt=""></li>
-          <li><img src="{{ url_for('static', filename='/css/img/sercotec4.png') }}" alt=""></li>
-        </ul>
-        
+      <a href="https://www.sercotec.cl/" target="_blank">
+        <img
+          src="{{ url_for('static', filename='/css/img/LogoSERCOTEC.png') }}"
+          alt="Mi imagen"
+          alt="logoSercotec"
+          title="Logo Sercotec"
+        />
+      </a>
+      <div class="caja">
+        <!-- <h1><img src="img/sercotec4.png" alt="sercotec"></h1> -->
+        <nav>
+          <ul>
+            <li id="Home">
+              <a
+                href="https://www.sercotec.cl/"
+                target="_blank"
+                title="Pagina de inicio Sercotec"
+                style="color: white"
+                >Home</a
+              >
+            </li>
+            <li id="Contacto">
+              <a
+                href="https://www.sercotec.cl/contacto/"
+                target="_blank"
+                title="Pagina de contacto Sercotec"
+                style="color: white"
+                >Contacto</a
+              >
+            </li>
+            <li id="Registrate">
+              <a
+                href="https://misdatos.sercotec.cl/"
+                target="_blank"
+                title="Pagina de registro Sercotec"
+                style="color: white"
+                >Registrate</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
-      <br><br><br><br>
-   
-    
+    </header>
+    <div class="slider">
+      <ul>
+        <li>
+          <img
+            src="{{ url_for('static', filename='/css/img/sercotec1.jpg') }}"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="{{ url_for('static', filename='/css/img/sercotec2.jpg') }}"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="{{ url_for('static', filename='/css/img/sercotec3.jpg') }}"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="{{ url_for('static', filename='/css/img/sercotec4.png') }}"
+            alt=""
+          />
+        </li>
+      </ul>
+    </div>
+    <br /><br /><br /><br />
     <h1>Sistema de Administración de Empresas (SAE)</h1>
-
-    <div>
-        Total Empresas: {{total_empresas}}
+    <div>Total Empresas: {{total_empresas}}</div>
+    <br />
+    <div class="ingresaEmpresa">
+      <a
+        href="/agregar">Ingresa tu Empresa Aqui</a
+      >
     </div>
-    <br>
-    <div >
-        <a href="/agregar" style="background-color: #053861; color: white; border-bottom: 1px solid black;">Ingresa tu Empresa Aqui</a>
-    </div>
-    <br>
-    <div>
+    <br />
+    <section>
+      <div>
         <table border="1">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Teléfono</th>
-                    <th>Email</th>
-                    <th>Categoría</th>
-                    <th>Producto/Servicio</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for empresas in empresas %}
-                <tr>
-                    <td>{{empresas.id}}</td>
-                    <td>{{empresas.nombre}}</td>
-                    <td>{{empresas.telefono}}</td>
-                    <td>{{empresas.email}}</td>
-                    <td>{{empresas.categoria}}</td>
-                    <td>{{empresas.producto_o_servicio}}</td>
-                    <td><a href="ver/{{empresas.id}}">Ver</a></td>
-                    <td><a href="editar/{{empresas.id}}">Editar</a></td>
-                    <td><a href="eliminar/{{empresas.id}}">Eliminar</a></td>
-
-                </tr>
-                {% endfor %}
-            </tbody>
-            <form action="{{ url_for('buscar') }}" method="POST">
-                <input type="text" name="termino_busqueda">
-                <button type="submit">Buscar</button>
-            </form>
-            
-
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Teléfono</th>
+              <th>Email</th>
+              <th>Categoría</th>
+              <th>Producto/Servicio</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for empresas in empresas %}
+            <tr>
+              <td>{{empresas.id}}</td>
+              <td>{{empresas.nombre}}</td>
+              <td>{{empresas.telefono}}</td>
+              <td>{{empresas.email}}</td>
+              <td>{{empresas.categoria}}</td>
+              <td>{{empresas.producto_o_servicio}}</td>
+              <td><a href="ver/{{empresas.id}}">Ver</a></td>
+              <td><a href="editar/{{empresas.id}}">Editar</a></td>
+              <td><a href="eliminar/{{empresas.id}}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+          <form action="{{ url_for('buscar') }}" method="POST">
+            <input
+              type="text"
+              name="termino_busqueda"
+              placeholder="ingresa el campo a buscar"
+            />
+            <button type="submit">Buscar</button>
+          </form>
         </table>
+      </div>
+    </section>
+    <br />
+    <iframe src="texto.txt" name="marco1" class="marco"></iframe>
+    <div class="centrar">
+      <a href="https://portales.inacap.cl/" target="marco1" class="boton"
+        >Cargar sitio de Inacap</a
+      >
     </div>
 
-</body>
+    <br />
+    <div class="pie_de_pagina">
+    <a href="#Home" style="color: white;">Home</a>|
+    <a href="#Contacto" style="color: white;">Contacto</a>|
+    <a href="#Registrate" style="color: white;">Registrate</a>|
+    </div>
+    
+  </body>
 </html>
