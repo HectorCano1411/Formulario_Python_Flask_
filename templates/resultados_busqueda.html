@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'index.html' %}
+    
+
+{% block content %}
+  <h1>Resultados de la búsqueda</h1>
+  <p>Se encontraron {{ total_empresas }} empresas con el término "{{ termino_busqueda }}".</p>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Correo Electrónico</th>
+        <th>Dirección</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for empresa in empresas %}
+        <tr>
+          <td>{{ empresas.id }}</td>
+          <td>{{ empresas.nombre }}</td>
+          <td>{{ empresas.telefono }}</td>
+          <td>{{ empresas.email }}</td>
+          <td>{{ empresas.categoria }}</td>
+          <td>{{ empresas.producto_o_servicio }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+
+
+</body>
+</html>

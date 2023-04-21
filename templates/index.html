@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Listado de Empresas</title>
+</head>
+<body>
+    <header>
+        <a href="https://www.sercotec.cl/" target="_blank">
+          <img
+            src="/img/LogoSERCOTEC.png"
+            alt="logoSercotec"
+            title="Logo Sercotec"
+          />
+        </a>
+  
+        <div class="caja">
+          <!-- <h1><img src="img/sercotec4.png" alt="sercotec"></h1> -->
+          <nav>
+            <ul>
+              <li><a href="https://www.sercotec.cl/" target="_blank" title="Pagina de inicio Sercotec">Home</a></li>
+              <li><a href="https://www.sercotec.cl/contacto/" target="_blank" title="Pagina de contacto Sercotec">Contacto</a></li>
+              <li><a href="https://misdatos.sercotec.cl/" target="_blank" title="Pagina de registro Sercotec">Registrate</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+  
+   
+    
+    <h1>Sistema de Administración de Empresas (SAE)</h1>
+
+    <div>
+        Total Empresas: {{total_empresas}}
+    </div>
+    <br>
+    <div>
+        <a href="/agregar">Agregar Empresas</a>
+    </div>
+    <br>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th>Categoría</th>
+                    <th>Producto/Servicio</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for empresas in empresas %}
+                <tr>
+                    <td>{{empresas.id}}</td>
+                    <td>{{empresas.nombre}}</td>
+                    <td>{{empresas.telefono}}</td>
+                    <td>{{empresas.email}}</td>
+                    <td>{{empresas.categoria}}</td>
+                    <td>{{empresas.producto_o_servicio}}</td>
+                    <td><a href="ver/{{empresas.id}}">Ver</a></td>
+                    <td><a href="editar/{{empresas.id}}">Editar</a></td>
+                    <td><a href="eliminar/{{empresas.id}}">Eliminar</a></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+            <form action="{{ url_for('buscar') }}" method="POST">
+                <input type="text" name="termino_busqueda">
+                <button type="submit">Buscar</button>
+            </form>
+            
+
+        </table>
+    </div>
+
+</body>
+</html>

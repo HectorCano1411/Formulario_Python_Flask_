@@ -1,0 +1,12 @@
+Single-database configuration for Flask.
+
+1 -comenzamos instalando las librerias que tenemos en el archivo txt requirements para el correcto funcionamiento de la aplicacion
+2 -creamos el archivo app.py e configuramos Flask SQL Alchemy
+3 -creamos el package de migrations (migrate alembic y SQL Alchemy) en la terminal con la sintaxis (flask db init)
+4 -creamos el archivo que tiene la representacion del mapeo de la clase de modelo hacia la creacion de la tabla de BD en la terminal con la sintaxis (flask db migrate)
+5 -para crear la tabla en la base de datos utilizamo la siguiente sintaxis en consola (flask db upgrade)
+6 -una vez que efectuemos cambios en la clase de modelo o tenemos que ejecutar en la terminal la sintaxis (flask db stamp head)
+7 -luego tenemos que volver a migrar los cambios en la terminal con la sintaxis (flask db migrate) y posterios (flask db upgrade) los cambios se realizaran en la BD
+8 -comenzamos a trabajar con flask, creamos el metodo (funcion) que recupere todas las empresas desde la base de dsatos en forma ordenada con la sintaxis (empresas.query.order_by)
+9 -contamos todos los datos de la BD generando una consulta (empresas.query.count)
+10 -creamos por default la plantilla o archivo html llamado (index.html)

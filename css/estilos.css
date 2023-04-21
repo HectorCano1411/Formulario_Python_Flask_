@@ -1,0 +1,48 @@
+header{
+    display: flex;
+    background-color: #053861;
+    color: #fff;
+    height: 90px;
+
+}
+ul{
+    background-color: #053861;
+    list-style-type: none;
+}
+li{
+    float: left;
+}
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+
+}
+
+li a, a:link, a:visited{
+    color: white;
+    text-decoration: none;
+    /* background-color: #8ecae6; */
+
+}
+
+li a, a:hover,a:active{
+    color: #8ecae6;
+    background-color: #053861;
+    text-decoration: underline;
+}
+img{
+    
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    text-decoration: none;
+    width: 88px;
+    height: 88px;
+    
+}
