@@ -15,6 +15,7 @@ class Empresas(db.Model):
             f'Id: {self.id},'
             f'Nombre: {self.nombre},' 
             f'Telefono: {self.telefono},'
+            f'Comuna: {self.comuna},'
             f'Email: {self.email}'
             f'Categoria: {self.categoria}'
             f'Progucto_o_Servicio: {self.producto_o_servicio}'
